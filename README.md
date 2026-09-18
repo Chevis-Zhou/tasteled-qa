@@ -1,5 +1,7 @@
 # tasteled-qa
 
+[![ci](https://github.com/Chevis-Zhou/tasteled-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/Chevis-Zhou/tasteled-qa/actions/workflows/ci.yml)
+
 The QA gate every [TasteLed](https://tasteled.com) client site has to pass before it goes live, packaged so you can run it on yours.
 
 Point it at a build folder or a URL. It crawls the site, opens every page in a real browser, and gives you a verdict: **PASS**, **WARN** or **FAIL**. You also get an HTML report with full-page screenshots at four widths.
