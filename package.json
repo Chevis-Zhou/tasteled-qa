@@ -1,0 +1,58 @@
+{
+  "name": "tasteled-qa",
+  "version": "0.1.0",
+  "description": "Pre-launch QA gate for websites: rendered content, layout at four widths, and an accessibility floor, with a pass/warn/fail verdict.",
+  "license": "MIT",
+  "author": "TasteLed (https://tasteled.com)",
+  "homepage": "https://tasteled.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chevis-Zhou/tasteled-qa.git"
+  },
+  "keywords": [
+    "qa",
+    "accessibility",
+    "a11y",
+    "axe-core",
+    "lighthouse",
+    "playwright",
+    "static-site",
+    "launch-checklist",
+    "nextjs"
+  ],
+  "type": "module",
+  "bin": {
+    "tasteled-qa": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp src/lighthouse-runner.mjs dist/ && chmod +x dist/cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm build && node --test test/*.test.mjs",
+    "prepublishOnly": "pnpm test"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "lighthouse": "^13.4.1",
+    "playwright": "^1.62.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5.9.3"
+  }
+}

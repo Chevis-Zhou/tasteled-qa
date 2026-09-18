@@ -1,0 +1,6 @@
+body { font: 18px/1.6 system-ui, sans-serif; color: #111; background: #fff; margin: 0 auto; max-width: 960px; padding: 24px; }
+nav a { display: inline-block; padding: 12px 8px; color: #0b3d91; }
+a { color: #0b3d91; }
+img { max-width: 100%; height: auto; }
+/* Wrapped inline links: regression fixture for the per-line overlap check. */
+.prose { max-width: 22ch; }
