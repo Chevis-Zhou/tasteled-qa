@@ -21,6 +21,7 @@ test("htmlToText decodes every entity form React and others emit", () => {
     ["a&nbsp;b", "a b"],
     ["<p>x</p><script>var y</script>", "x"],
     ["&#x1F600;", "😀"],
+    ["$<!-- -->500", "$500"],
   ];
   for (const [input, expected] of cases) assert.equal(htmlToText(input), expected, input);
 });

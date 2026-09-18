@@ -25,7 +25,9 @@ export function htmlToText(html: string): string {
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
     .replace(/<template[\s\S]*?<\/template>/gi, " ")
-    .replace(/<!--[\s\S]*?-->/g, " ")
+    // Comments become nothing, not a space: React separates adjacent text nodes with
+    // `<!-- -->`, so `$<!-- -->500` renders as "$500". Found on a live pricing page.
+    .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/<[^>]+>/g, " ");
 
   // Numeric entities are decoded by *form*, not from an enumerated list. The list was a real
