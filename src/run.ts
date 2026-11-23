@@ -69,7 +69,7 @@ export async function runQA(opts: RunOptions): Promise<{ result: QAResult; repor
   const screenshots: string[] = [];
   const outDir = path.resolve(opts.outDir ?? "qa-report");
   const cache: LinkCache = new Map();
-  let pages: string[] = [];
+  let pages: string[];
 
   try {
     pages = opts.pages?.length ? opts.pages : await discoverPages(context, origin, opts.maxPages ?? 25);

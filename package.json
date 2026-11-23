@@ -44,7 +44,8 @@
     "build": "tsc -p tsconfig.json && cp src/lighthouse-runner.mjs dist/ && chmod +x dist/cli.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "pnpm build && node --test test/*.test.mjs",
-    "prepublishOnly": "pnpm test"
+    "prepublishOnly": "pnpm test",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@axe-core/playwright": "^4.13.0",
@@ -52,8 +53,12 @@
     "playwright": "^1.62.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^20",
-    "typescript": "^5.9.3"
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.73.0"
   },
   "packageManager": "pnpm@11.5.2"
 }
